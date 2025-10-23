@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.principal{
+    margin-top: 8%;
+    margin-left: 5%;
+    margin-right:5%;
+    margin-bottom:5%;
+    
+}
+.cabecalho{
+   
+    display: flex;
+    margin-bottom:5%;
+    height: 10%;
+    width: 100%;
+    top: 0;
+    background-color:lightblue ;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    
+   
+}
+.cabecalho p{
+    margin-left: 5%;
+}
+
+.rodapé{
+    
+    height: 10%;
+    background-color: lightsalmon;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    bottom: 5%;
+}
