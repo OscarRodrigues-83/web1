@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="scripts/script.js"></script>
+    <title>Prova da Loja de Informática</title>
+</head>
+
+<body>
+    <header>
+        <h1>Prova da Loja de Informática</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Produtos</a>
+            <a href="#">Contato</a>
+        </nav>
+        <div class="carrinho">
+            <a href="carrinho.html">
+                <span id="carrinho-contagem">0</span>
+                <img src="cart-icon.png" alt="Carrinho de Compras">
+            </a>
+        </div>
+    </header>
+    <main>
+        <section class="produtos">
+            <article class="produto-card">
+                <img src="img/notebook.jpg" alt="Notebook">
+                <h2>Notebook</h2>
+                <p>R$ 3.500,00</p>
+                <button onclick="adicionaAoCarrinho('Notebook', 3500)">Adicionar ao Carrinho</button>
+            </article>
+            <article class="produto-card">
+                <img src="img/mouse.jpg" alt="Mouse">
+                <h2>Mouse</h2>
+                <p>R$ 50,00</p>
+                <button onclick="adicionaAoCarrinho('Mouse', 50)">Adicionar ao Carrinho</button>
+            </article>
+            <article class="produto-card">
+                <img src="img/teclado.jpg" alt="Teclado">
+                <h2>Teclado</h2>
+                <p>R$ 150,00</p>
+                <button onclick="adicionaAoCarrinho('Teclado', 150)">Adicionar ao Carrinho</button>
+            </article>
+            <article class="produto-card">
+                <img src="img/leitorBiometrico.jpg" alt="LeitorBiometrico">
+                <h2>Leitor Biométrico</h2>
+                <p>R$ 350,00</p>
+                <button onclick="adicionaAoCarrinho('LeitorBiometrico', 350)">Adicionar ao Carrinho</button>
+            </article>
+            <article class="produto-card">
+                <img src="img/passadorSlide.jpg" alt="PassadorSlide">
+                <h2>Passador Slide</h2>
+                <p>R$ 350,00</p>
+                <button onclick="adicionaAoCarrinho('PassadorSlide', 350)">Adicionar ao Carrinho</button>
+            </article>
+            <article class="produto-card">
+                <img src="img/tablet.jpg" alt="Tablet">
+                <h2>Tablet</h2>
+                <p>R$ 2.350,00</p>
+                <button onclick="adicionaAoCarrinho('Tablet', 2350)">Adicionar ao Carrinho</button>
+            </article>
+            <!-- Adicione mais produtos conforme necessário -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Minha Loja de Informática - Todos os direitos reservados</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
