@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Quadrado</title>
+    <script>
+        function calcula_Quadrado() {
+            var numeroRecebido = document.getElementById ("txtNumeros_Calculo_Quadrado").value;
+            var arrayNumeroRecebido = numeroRecebido.split(",");
+           for (let i = 0; i < arrayNumeroRecebido.length; i++) {
+               const numero = parseInt(arrayNumeroRecebido[i])
+               document.writeln(`O quadrado de ${numero} é: ${numero ** 2}<br>`)
+            
+           }
+        }
+    
+            </script>
+
+</head>
+
+<body>
+    Insira numero: <input type="text" id="txtNumeros_Calculo_Quadrado">  
+    <input type="button" value="Calular X²" onclick= "calcula_Quadrado()">
+</body>
+</html>

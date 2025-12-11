@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel de Temperaturas Semanais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Monitor de Temperaturas Semanais</h2>
+
+  <label for="temperatura">Digite a temperatura (°C):</label><br>
+  <input type="number" id="temperatura" step="0.1">
+  <button onclick="adicionarTemperatura()">Adicionar Temperatura</button><br>
+
+  <h3>Temperaturas Inseridas:</h3>
+  <ul id="listaTemperaturas"></ul>
+
+  <button onclick="calcularMedia()">Calcular Média</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    const temperaturas = [];
+
+    function adicionarTemperatura() {
+      const input = document.getElementById('temperatura');
+      const valor = parseFloat(input.value);
+
+      if (isNaN(valor)) {
+        alert("Por favor, insira um número válido.");
+        return;
+      }
+
+      temperaturas.push(valor);
+
+      const lista = document.getElementById('listaTemperaturas');
+      const item = document.createElement('li');
+      item.textContent = valor + " °C";
+      lista.appendChild(item);
+
+      input.value = "";
+      input.focus();
+    }
+
+    function calcularMedia() {
+      if (temperaturas.length === 0) {
+        alert("Nenhuma temperatura foi inserida.");
+        return;
+      }
+
+      //Questão 01 -TODO
+
+
+      let mensagem;
+      if (media > 30) {
+        mensagem = "A semana está quente! 🔥";
+      } else if (media >= 20 && media <= 30) {
+        mensagem = "Temperatura amena. 🌤️";
+      } else {
+        mensagem = "Semana fria! ❄️";
+      }
+
+      const resultado = document.getElementById('resultado');
+      resultado.innerHTML = `
+        <p>Média das temperaturas: <strong>${media.toFixed(2)} °C</strong></p>
+        <div class="alerta">${mensagem}</div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
