@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+    <Script>
+        function maiorValor() {
+            let numeros = document.getElementById("numerosInput").value;
+            numeros = numeros.split(",").map(Number);
+            let maior = numeros[0];
+            for (let i = 1; i < numeros.length; i++) {
+                if (numeros[i] > maior) {
+                    maior = numeros[i];
+                }
+            }
+            document.writeln(`O maior número é: ${maior}`);
+        }
+
+    </Script>
+</head>
+
+<body>
+    Insira os números:<input type="text" id="numerosInput">
+    <button onclick="maiorValor()">Maior valor</button>
+
+</body>
+
+</html>

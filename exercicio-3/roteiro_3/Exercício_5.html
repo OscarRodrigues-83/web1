@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+    <Script>
+        function inverteTexto() {
+            let textoInput = document.getElementById("textInput").value;
+            let textoInvertido = "";
+            for (let i = textoInput.length - 1 ; i >= 0; i--) {
+                textoInvertido += textoInput[i];
+            }
+            document.writeln("Texto invertido: " + textoInvertido);
+        }
+
+    </Script>
+</head>
+
+<body>
+     Insira o texto:<input type="text" id="textInput">
+    <button onclick="inverteTexto()">Inverter texto</button>
+
+</body>
+
+</html>

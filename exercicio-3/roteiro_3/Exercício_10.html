@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+    <script>
+        function inverter() {
+            let inputNumeros = document.getElementById("inputNumeros").value.split(",").map(Number);
+            let invertidos = [];
+            for (let i = inputNumeros.length - 1; i >= 0 ; i--) {
+                invertidos[inputNumeros.length - 1 - i] = inputNumeros[i];
+            }
+            document.writeln(`Números invertidos: ${invertidos.toString()}`)
+
+        }
+    </script>
+</head>
+
+<body>
+    Insira os números: <input type="text" id="inputNumeros">
+    <button onclick="inverter()">Inverter números</button>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+    <Script>
+        function separaDiaMesAno() {
+            let datas = document.getElementById("dateInput").value.split("/");
+            document.writeln(`Dia: ${datas[0]}<br>`);
+            document.writeln(`Mês: ${datas[1]}<br>`);
+            document.writeln(`Ano: ${datas[1]}<br>`);
+        }
+
+    </Script>
+</head>
+
+<body>
+    Insira uma data:<input type="text" id="dateInput">
+    <button onclick="separaDiaMesAno()">Separar Dia, Mês, Ano</button>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+    <Script>
+        function maioresEMenores() {
+            let numeros = document.getElementById("numerosInput").value;
+            numeros = numeros.split(",").map(Number);
+            let maiores = 0;
+            let menores = 0;
+            for (let i = 1; i < numeros.length; i++) {
+                if (numeros[i] >= 18) {
+                    maiores++;
+                }
+                else{
+                    menores++;
+                }
+            }
+            document.writeln(`Quantidade de maiores de idade: ${maiores}<br>`);
+            document.writeln(`Quantidade de maiores de idade: ${maiores}<br>`);
+        }
+
+    </Script>
+</head>
+
+<body>
+    Insira os números:<input type="text" id="numerosInput">
+    <button onclick="maioresEMenores()">Maior valor</button>
+
+</body>
+
+</html>

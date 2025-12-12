@@ -48,10 +48,12 @@
         alert("Nenhuma temperatura foi inserida.");
         return;
       }
-
-      //Questão 01 -TODO
-
-
+      let media = 0;
+      for (let i = 0; i < temperaturas.length; i++) {
+       media += temperaturas[i];
+        
+      }
+      media /= temperaturas.length;
       let mensagem;
       if (media > 30) {
         mensagem = "A semana está quente! 🔥";

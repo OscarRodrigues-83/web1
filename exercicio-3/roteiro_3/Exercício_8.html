@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+    <script>
+        function calculaFatorial() {
+            let inputNumeros = document.getElementById("inputNumeros").value.split(",").map(Number);
+            let fatoriais = [];
+            for (let i = 0; i < inputNumeros.length; i++) {
+
+                fatoriais[i] = fatorial(inputNumeros[i])
+
+            }
+            document.writeln(`O fatorial dos números é: ${fatoriais.toString()}`);
+            function fatorial(numero) {
+                if (numero == 0) return 1;
+                return numero * fatorial(numero - 1);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    Insira os números: <input type="text" id="inputNumeros">
+    <button onclick="calculaFatorial()">Calcular fatorial</button>
+</body>
+
+</html>

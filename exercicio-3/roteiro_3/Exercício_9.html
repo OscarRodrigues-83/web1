@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+    <script>
+        function calculaMedia() {
+            let inputNumeros = document.getElementById("inputNumeros").value.split(",").map(Number);
+            let media= 0;
+            for (let i = 0; i < inputNumeros.length; i++) {
+                media += inputNumeros[i];
+            }
+            document.writeln(`A média é: ${media / inputNumeros.length} <br>
+                             A quantidade de números positivos  é: ${getQuantPositivos(inputNumeros)}<br>
+                             A quantidade de negativos é: ${getQuantNegativos(inputNumeros)}<br>
+                             A porcentagem de postivos é: ${calculaPorcentagem(getQuantPositivos(inputNumeros), inputNumeros)}<br>
+                             A porcentagem de negativos é: ${calculaPorcentagem(getQuantNegativos(inputNumeros), inputNumeros)}<br>`);
+           
+        }
+        function calculaPorcentagem(quantidade, inputNumeros){
+            return (quantidade * 100) / inputNumeros.length;
+        }
+
+        function getQuantNegativos(inputNumeros) {
+            let quantNegativos = 0;
+            for (let i = 0; i < inputNumeros.length; i++) {
+                if (inputNumeros[i] < 0) quantNegativos++;
+            }
+            return quantNegativos;
+        }
+
+        function getQuantPositivos(inputNumeros) {
+            let quantPositivos = 0;
+            for (let i = 0; i < inputNumeros.length; i++) {
+                if (inputNumeros[i] >= 0) quantPositivos++;
+            }
+            return quantPositivos;
+        }
+    </script>
+</head>
+
+<body>
+    Insira os números: <input type="text" id="inputNumeros">
+    <button onclick="calculaMedia()">Calucalr média, positvos, negativos, </button>
+</body>
+
+</html>
