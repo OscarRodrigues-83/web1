@@ -9,11 +9,11 @@ function adicionaAoCarrinho(nomeProduto, precoProduto) {
 }
 
 const gerarRelatorio = (vendas) => {
-  
-    const formatarMoeda = (valor) => new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(valor);
+  const formatarMoeda = (valor) =>
+    new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(valor);
 
   let relatorio = `Relatório de Vendas:\n\n`;
   let totalGeral = 0;
@@ -47,6 +47,63 @@ Vendedor: ${vendedor}
   }
 
   return relatorio;
+};
+
+const gerarEmail = ({ nome, email, plano, ativo }) => {
+  let template = `Para: ${email}
+    
+    Olá, ${nome} 
+    
+    `;
+
+  if (ativo) {
+    template += `Obrigado por ser um assinante do nosso plano ${plano}! Estamos felizes tem tê-lo conosco.
+        
+        Caso precise de suporte, estamos à disposição.
+        
+        Atenciosamente,
+        Equipe StreamingWeb.`;
+  } else {
+    template += `Notamos que sua assinatura do plano ${plano} está inativa. Que tal voltar e  aproveitar nossos conteúdos exclusivos?
+    
+        Reative agora e continue sua experiência conosco!
+    
+        Atenciosamente,
+        Equipe StreamingWeb.`;
+  }
+
+  return template;
+};
+
+const normalizarUsuario = ({ nome, idade, ativo, saldo }) => {
+  let idadeNormalizada = parseInt(idade, 10);
+  if (Number.isNaN(idadeNormalizada)) {
+    idadeNormalizada = null;
+  }
+
+  let ativoNormalizado =
+    ativo === true || ativo === "true" || ativo === 1;
+
+  let saldoNormalizado = parseFloat(saldo);
+  if (Number.isNaN(saldoNormalizado)) {
+    saldoNormalizado = 0;
+  }
+  saldoNormalizado = Number(saldoNormalizado.toFixed(2));
+
+  return {
+    nome,
+    idade: idadeNormalizada,
+    ativo: ativoNormalizado,
+    saldo: saldoNormalizado
+  };
+};
+
+const processarUsuario = (lista) => {
+  const usuariosNormalizados = lista.map(usuario =>
+    normalizarUsuario(usuario)
+  );
+
+  console.log(usuariosNormalizados);
 };
 
 
