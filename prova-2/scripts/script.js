@@ -106,6 +106,46 @@ const processarUsuario = (lista) => {
   console.log(usuariosNormalizados);
 };
 
+const somar = (numeros, callback) => callback(numeros);
+
+const somaCincoPares = (x) => {
+  let inicio = x % 2 === 0 ? x : x + 1;
+
+  const pares = [];
+  for (let i = 0; i < 5; i++) {
+    pares.push(inicio + i * 2);
+  }
+
+  const resultado = somar(pares, lista =>
+    lista.reduce((acc, n) => acc + n, 0)
+  );
+
+  console.log(`Entrada: ${x} => Saída: ${resultado}`);
+};
+
+const exportacao = {
+  paisDestino: "Estados Unidos",
+  produto: {
+    nome: "aço",
+    valorEmDolares: 100000,
+    taxaImposta: 0.25
+  },
+  empresa: "Siderúrgica Brasil Ltda"
+};
+
+const calcularTarifa = ({ produto, empresa }) => {
+  const { nome, valorEmDolares, taxaImposta } = produto;
+
+  const valorComTarifa = valorEmDolares * (1 + taxaImposta);
+
+  console.log(`Produto: ${nome}`);
+  console.log(`Empresa: ${empresa}`);
+  console.log(`Valor original: US$ ${valorEmDolares}`);
+  console.log(`Taxa: ${taxaImposta * 100}%`);
+  console.log(`Valor com tarifa: US$ ${valorComTarifa}`);
+};
+
+
 
 function atualizaContagemCarrinho() {
   document.getElementById("carrinho-contagem").textContent = carrinho.length;
